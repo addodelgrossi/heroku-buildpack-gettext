@@ -3,6 +3,11 @@
 
 set -e
 
+indent() {
+    RE="s/^/       /"
+    [ $(uname) == "Darwin" ] && sed -l "$RE" || sed -u "$RE"
+}
+
 GETTEXT_TARBALL=http://fb_wanted.s3.amazonaws.com/bp/gettext.tar.gz
 TARGET_DIR=$HOME
 BUILD_DIR=$1
