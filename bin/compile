@@ -47,5 +47,5 @@ echo "-----> manage file $MANAGE_FILE"
 echo $MANAGE_FILE
 echo "$MANAGE_FILE"
 echo $(find . -maxdepth 3 -type f -name 'manage.py' | head -1)
-python $BUILD_DIR/manage.py compilemessages 2>&1 | indent
+python ./manage.py compilemessages 2>&1 | indent
 echo "-----> done compiling translation files"
