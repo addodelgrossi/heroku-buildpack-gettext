@@ -17,7 +17,7 @@ if [ -d $TARGET_DIR/gettext ]; then
 	
 	echo "-----> Compile messages ..."
 
-	./manage.py compilemessages
+	python manage.py compilemessages
 
 	exit 0
 fi
