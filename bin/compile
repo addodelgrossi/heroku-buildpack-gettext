@@ -23,7 +23,7 @@ if [ -d $TARGET_DIR/gettext ]; then
 	echo "$PWD/gettext already installed"
 	
 	echo "-----> Compiling translation files"
-	python "$MANAGE_FILE" compilemessages 2>&1 | indent
+	python manage.py compilemessages 2>&1 | indent
 
 	exit 0
 fi
@@ -43,4 +43,4 @@ echo "export PATH=\"\$PATH:$BUILD_DIR/.heroku/gettext/bin\"" >> "$BP_DIR/export"
 echo "-----> done in $TARGET_DIR/.heroku/gettext"
 
 echo "-----> Compiling translation files"
-python "$MANAGE_FILE" compilemessages 2>&1 | indent
+python manage.py compilemessages 2>&1 | indent
