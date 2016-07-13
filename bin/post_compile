@@ -44,12 +44,10 @@ MANAGE_FILE=${MANAGE_FILE:2}
 
 echo "-----> Compiling translation files"
 python "$MANAGE_FILE" compilemessages 2>&1 | indent
-rm -rf .heroku/vendor/gettext/
+# rm -rf .heroku/vendor/gettext/
 
 #echo "-----> Collecting static files"
-#python "$MANAGE_FILE" collectstatic --noinput  2>&1 | 
-sed '/^Copying/d;/^$/d;/^ /d' |
-indent
+#python "$MANAGE_FILE" collectstatic --noinput  2>&1 | sed '/^Copying/d;/^$/d;/^ /d' | indent
 
 #echo "-----> Compressing static files"
 #python "$MANAGE_FILE" compress 2>&1 | indent
