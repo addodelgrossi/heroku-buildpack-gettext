@@ -44,6 +44,8 @@ echo "-----> done in $TARGET_DIR/.heroku/gettext"
 
 echo "-----> Compiling translation files"
 echo "-----> manage file $MANAGE_FILE"
+echo $MANAGE_FILE
 echo "$MANAGE_FILE"
-python /app/.heroku/manage.py compilemessages 2>&1 | indent
+echo $(find . -maxdepth 3 -type f -name 'manage.py' | head -1)
+python $BUILD_DIR/manage.py compilemessages 2>&1 | indent
 echo "-----> done compiling translation files"
