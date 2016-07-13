@@ -14,6 +14,11 @@ cd $BUILD_DIR
 
 if [ -d $TARGET_DIR/gettext ]; then
 	echo "$PWD/gettext already installed"
+	
+	echo "-----> Compile messages ..."
+
+	./manage.py compilemessages
+
 	exit 0
 fi
 
@@ -30,3 +35,7 @@ echo "       Exporting path for subsequent buildpacks..."
 echo "export PATH=\"\$PATH:$BUILD_DIR/.heroku/gettext/bin\"" >> "$BP_DIR/export"
 
 echo "-----> done in $TARGET_DIR/.heroku/gettext"
+
+echo "-----> Compile messages ..."
+
+./manage.py compilemessages
