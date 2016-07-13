@@ -43,5 +43,6 @@ echo "export PATH=\"\$PATH:$BUILD_DIR/.heroku/gettext/bin\"" >> "$BP_DIR/export"
 echo "-----> done in $TARGET_DIR/.heroku/gettext"
 
 echo "-----> Compiling translation files"
+echo "-----> manage file $MANAGE_FILE"
 python manage.py compilemessages 2>&1 | indent
 echo "-----> done compiling translation files"
